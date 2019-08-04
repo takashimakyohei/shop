@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+<% end %>
+
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to root_path do %>
+          <%=icon('fas', 'home',class:"icon")%>
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          
+          
+          <% if logged_in? %>
+          
+          <li>
+              <%= link_to "#" do %>
+                <%=icon('fas', 'users-cog',class:"icon")%>
+              <% end %>
+            </li>
+          
+            <li>
+              <%= link_to "#" do %>
+                <%=icon('fas', 'shopping-cart',class:"icon")%>
+              <% end %>
+            </li>
+            
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%=icon('fas', 'sign-out-alt',class:"icon")%>
+              <% end %>
+            </li>
+          <% else %>
+          
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <%= yield %>
+    
+    <script>
+  $(function(){
+    $(".alert").fadeOut(5000);
+  });
+</script>
+  </body>
+</html>
