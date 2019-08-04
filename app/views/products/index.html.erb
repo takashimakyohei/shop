@@ -1,0 +1,25 @@
+<div class="topic-index-wrapper">
+  <div class="container">
+    <% @products.each do |product| %>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="topic-index-single">
+            <h4 class="topic-author">
+              <%= product.title %>
+             <p> ¥<%= product.price %></p>
+            </h2>
+            <%= image_tag product.image.url,size: '200x200'%>
+            <%= link_to '詳細', "#" %>
+            
+            <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+            
+            
+            <p class="topic-text">
+              <%= product.description %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
