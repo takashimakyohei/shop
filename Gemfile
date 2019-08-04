@@ -69,3 +69,4 @@ gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'font-awesome-rails'
+gem "carrierwave"

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "pages#index"
   
   resources :users
+  resources :products
   
   get "login", to:"sessions#new"
   post "login", to: "sessions#create"

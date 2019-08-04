@@ -22,6 +22,12 @@
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           
+              <li>
+              <%= link_to "商品一覧","#",class:"font" %>
+              </li>
+              
+              
+          
           
           <% if logged_in? %>
           
@@ -41,7 +47,7 @@
               <%= link_to logout_path, method: :delete do %>
                 <%=icon('fas', 'sign-out-alt',class:"icon")%>
               <% end %>
-            </li>
+            <li>
           <% else %>
           
           <% end %>
