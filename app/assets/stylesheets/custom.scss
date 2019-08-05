@@ -69,11 +69,7 @@ h1, h2 {
   width: 100%;
   z-index: 10000;
 }
-.icon{
-  font-size:40px;
- padding-top:5px;
-  
-}
+
 .navbar-transparent {
   margin-bottom: 0px;
   background-color: rgba(0,0,0,0.5);
@@ -139,3 +135,22 @@ h1, h2 {
     }
   }
 }
+.icon-home{
+  font-size:40px;
+ padding-top:5px;
+  content:"\f015";
+  font-family: "FontAwesome"
+}
+
+.icon-cart{
+  font-size:40px;
+ padding-top:5px;
+  content:"\f07a";
+  font-family: "FontAwesome"
+}
+
+.icon-logout{
+  height:35px;
+}
+
+

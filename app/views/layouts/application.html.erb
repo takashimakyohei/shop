@@ -18,7 +18,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
-          <%=icon('fas', 'home',class:"icon")%>
+          <%=icon('fas', 'home',class:"icon-home")%>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           
@@ -32,20 +32,20 @@
           <% if logged_in? %>
           
           <li>
-              <%= link_to "#" do %>
-                <%=icon('fas', 'users-cog',class:"icon")%>
+              <%= link_to user_home_path do %>
+                <%=image_tag "icons/user-cog.jpeg"%>
               <% end %>
             </li>
           
             <li>
               <%= link_to "#" do %>
-                <%=icon('fas', 'shopping-cart',class:"icon")%>
+                <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
               <% end %>
             </li>
             
             <li>
               <%= link_to logout_path, method: :delete do %>
-                <%=icon('fas', 'sign-out-alt',class:"icon")%>
+                <%=image_tag "icons/logout.png",class:"icon-logout" %>
               <% end %>
             <li>
           <% else %>
