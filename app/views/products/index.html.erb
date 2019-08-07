@@ -9,12 +9,15 @@
              <p> ¥<%= product.price %></p>
             </h2>
             <%= image_tag product.image.url,size: '200x200'%>
-            <%= link_to "詳細", product_path %>
+            <%= link_to "詳細", product_path(product) %>
             
-            
-          
-            
-            <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+            <% if !product.cart_users.include?(current_user) %>
+          <%= link_to carts_path(product_id: product.id), method: :post do %>
+                <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
+                 カートに入れる
+              <% end %>
+              <% end %>
+             
             
             
           </div>

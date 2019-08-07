@@ -9,5 +9,7 @@ class User < ApplicationRecord
   validates :password, presence: true,format: {with: VALID_PASSWORD_REGEX}
   has_secure_password
   
+  has_many :carts
   has_many :products
+  has_many :cart_products, through: :carts, source: 'product'
 end

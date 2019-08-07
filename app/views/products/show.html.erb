@@ -1,0 +1,30 @@
+ <div class="topic-index-wrapper">
+  <div class="container">
+    
+      <div class="row">
+        <div class="col-md-6">
+          <div class="topic-index-single">
+            <h4 class="topic-author">
+              <%= @product.title %>
+             <p> ¥<%= @product.price %></p>
+            <%= image_tag @product.image.url,size: '200x200'%>
+            
+            <p><%= @product.description %></p>
+            
+            
+          
+          
+              <%= link_to "#" do %>
+                <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
+              <% end %>
+              カートに入れる
+             <p><%= link_to "戻る", products_path %></p>
+            
+              
+            
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
