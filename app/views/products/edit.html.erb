@@ -1,0 +1,36 @@
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">商品の編集</h1>
+        <%= form_for @product do |f| %>
+        
+    
+          
+          <div class="form-group">
+            <%= f.label "タイトル" %>
+            <%= f.text_field :title%>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label "￥" %>
+            <%= f.text_field :price%>
+          </div>
+        
+          <div class="form-group">
+            <%= f.label "画像の登録" %>
+            <%= f.file_field :image%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "商品の概要" %>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+
+          <%= f.submit '編集完了', class: 'btn btn-black btn-block' %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

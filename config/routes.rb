@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   
   get "user_home",to:"products#home"
   
+  
   get 'carts/index'
   post "carts",to:"carts#create"
+  
+ 
   
 end

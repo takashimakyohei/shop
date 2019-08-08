@@ -10,12 +10,20 @@
             </h2>
             <%= image_tag product.image.url,size: '200x200'%>
             <%= link_to "詳細", product_path(product) %>
+             <% if logged_in? %>
+            <p><%= link_to '商品（詳細）の編集', edit_product_path(product) %></p>
+            <%= link_to  product_path(product),method: :delete do %>
+            <p>削除</p>
+            <% end %>
+           <% end %>
             
             <% if !product.cart_users.include?(current_user) %>
           <%= link_to carts_path(product_id: product.id), method: :post do %>
+          <% if logged_in? %>
                 <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
                  カートに入れる
               <% end %>
+             <% end %>
               <% end %>
              
             

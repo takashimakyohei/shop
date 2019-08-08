@@ -10,8 +10,7 @@ def create
 
     if cart.save
       redirect_to products_path, success: "カートに入れました。"
-    else
-      redirect_to products_path, danger: 'カートに入りませんでした'
+  
     end
 end
 end
