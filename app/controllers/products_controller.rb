@@ -7,10 +7,7 @@ class ProductsController < ApplicationController
   
   def index
     @products =Product.all
-    @total_price = 0
-    @products.each do |product|
-      @total_price += product.price
-    end
+    
   end
   
 
