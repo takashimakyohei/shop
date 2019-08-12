@@ -13,4 +13,9 @@ def create
   
     end
 end
+
+  def show
+    @cart_products = Product.find(params[:id])
+  end
+
 end

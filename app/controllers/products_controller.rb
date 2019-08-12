@@ -1,12 +1,20 @@
 class ProductsController < ApplicationController
+
+
   def home
     
   end
   
   def index
     @products =Product.all
+    @total_price = 0
+    @products.each do |product|
+      @total_price += product.price
+    end
   end
   
+
+
   def new
     @product =Product.new
   end
@@ -44,6 +52,7 @@ class ProductsController < ApplicationController
     redirect_to products_path,success:'商品を削除しました'
     end
   end
+
     
   
   private

@@ -7,18 +7,20 @@ Rails.application.routes.draw do
   root "pages#index"
   
   resources :users
-  resources :products
+  resources :products 
+
   
+
   get "login", to:"sessions#new"
   post "login", to: "sessions#create"
   delete "logout",to:"sessions#destroy"
   
   get "user_home",to:"products#home"
   
-  
   get 'carts/index'
-  post "carts",to:"carts#create"
+  post '/carts', to: 'carts#create'
+  
+  get '/carts/:id', to: 'carts#show'
   
  
-  
 end

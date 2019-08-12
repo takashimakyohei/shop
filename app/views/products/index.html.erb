@@ -17,7 +17,8 @@
             <% end %>
            <% end %>
             
-            <% if !product.cart_users.include?(current_user) %>
+           
+         <% if !product.cart_users.include?(current_user) %>
           <%= link_to carts_path(product_id: product.id), method: :post do %>
           <% if logged_in? %>
                 <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
@@ -25,12 +26,13 @@
               <% end %>
              <% end %>
               <% end %>
-             
-            
+
             
           </div>
         </div>
       </div>
     <% end %>
+    <h2><%= "合計金額は、#{@total_price}円" %></h2>
+       
   </div>
 </div>
