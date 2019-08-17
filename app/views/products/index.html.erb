@@ -7,9 +7,11 @@
             <h4 class="topic-author">
               <%= product.title %>
              <p> ¥<%= product.price %></p>
+             
             </h2>
             <%= image_tag product.image.url,size: '200x200'%>
             <%= link_to "詳細", product_path(product) %>
+         
              <% if logged_in? %>
             <p><%= link_to '商品（詳細）の編集', edit_product_path(product) %></p>
             <%= link_to  product_path(product),method: :delete do %>
@@ -19,10 +21,12 @@
             
            
          <% if !product.cart_users.include?(current_user) %>
-          <%= link_to carts_path(product_id: product.id), method: :post do %>
+          <%= form_for @cart do |f| %>
           <% if logged_in? %>
-                <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
-                 カートに入れる
+          
+               <%= f.hidden_field :product_id, :value => product.id %>
+               <%= f.select :quanity,[*1..10] %>
+                 <%= f.submit "カートに入れる" %>
               <% end %>
              <% end %>
               <% end %>
@@ -33,6 +37,6 @@
       </div>
     <% end %>
 
-       
+       <h2><%= link_to "カートへ",carts_index_path %></h2>
   </div>
 </div>

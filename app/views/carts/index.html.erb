@@ -9,13 +9,16 @@
              <p> ¥<%= product.price %></p>
             <%= image_tag product.image.url,size: '200x200'%>
             <p><%= product.description %></p>
-             <p><%= link_to "戻る", products_path %></p>
+            
+             
           </div>
         </div>
       </div>
     <% end %>
     
 <h2><%= "合計金額は、#{@total_price}円" %></h2>
+<%= button_to '購入する',"#", method: :get %>
+ <p><%= link_to "戻る", products_path %></p>
 
   </div>
 </div>

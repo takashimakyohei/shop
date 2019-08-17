@@ -14,7 +14,7 @@
           
           <div class="form-group">
             <%= f.label "￥" %>
-            <%= f.text_field :price%>
+            <%= f.number_field :price%>
           </div>
         
           <div class="form-group">
@@ -26,6 +26,9 @@
             <%= f.label "商品の概要" %>
             <%= f.text_area :description, class: 'form-control' %>
           </div>
+          
+          
+        
 
           <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
 

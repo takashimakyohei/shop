@@ -9,9 +9,7 @@ class CartsController < ApplicationController
   end
 
 def create
-    cart = Cart.new
-    cart.user_id = current_user.id
-    cart.product_id = params[:product_id]
+    cart = Cart.new(:user_id => current_user.id, :product_id => params[:cart][:product_id], :quanity => params[:cart][:quanity])
 
     if cart.save
       redirect_to products_path, success: "カートに入れました。"
