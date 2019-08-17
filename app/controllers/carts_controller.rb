@@ -1,11 +1,13 @@
 class CartsController < ApplicationController
   def index
-    @cart_products =current_user.cart_products
+    @cart_products = current_user.cart_products
+    @carts =current_user.carts
     @total_price = 0
-    @cart_products.each do |product|
-      @total_price += product.price
+    @carts.each do |cart|
+      @total_price += cart.product.price * cart.quanity
       
     end
+    
   end
 
 def create
