@@ -25,7 +25,7 @@
           <% if logged_in? %>
           
                <%= f.hidden_field :product_id, :value => product.id %>
-               <%= f.select :quanity,[*1..10] %>
+               <%= f.select :quantity,[*1..10] %>
                  <%= f.submit "カートに入れる" %>
               <% end %>
              <% end %>
