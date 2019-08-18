@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  get 'orders/index'
   get 'products/new'
   get 'sessions/new'
   get 'pages/index'
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
   post '/carts', to: 'carts#create'
   
   get '/carts/:id', to: 'carts#show'
+  
+ 
+  
+  resources :orders
   
  
 end

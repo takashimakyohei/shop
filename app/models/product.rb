@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   validates :image,presence: true
   validates :description,presence: true
   
+  belongs_to :order
   belongs_to :user
   has_many:carts
   has_many :cart_users, through: :carts, source: 'user'

@@ -18,7 +18,9 @@
     <% end %>
     
 <h2><%= "合計金額は、#{@total_price}円" %></h2>
-<%= button_to '購入する',"#", method: :get %>
+<%= button_to '購入する',orders_path, method: :post %>
+
+
  <p><%= link_to "戻る", products_path %></p>
 
   </div>

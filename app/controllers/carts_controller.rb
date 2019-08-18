@@ -9,6 +9,8 @@ class CartsController < ApplicationController
     end
     
   end
+  
+ 
 
 def create
     cart = Cart.new(:user_id => current_user.id, :product_id => params[:cart][:product_id], :quantity => params[:cart][:quantity])

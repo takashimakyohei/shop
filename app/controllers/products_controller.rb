@@ -49,6 +49,8 @@ class ProductsController < ApplicationController
     redirect_to products_path,success:'商品を削除しました'
     end
   end
+  
+ 
 
     
   
