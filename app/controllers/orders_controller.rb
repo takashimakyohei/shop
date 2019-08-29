@@ -8,8 +8,8 @@ class OrdersController < ApplicationController
     #order = Order.new(:cart_id =>params[:cart][:cart_id])
     order = Order.new(user_id:cart.user_id, product_id:cart.product_id)
      order.save
+     cart.destroy
       redirect_to products_path, success: "購入しました"
-      cart.destroy
     end
   end
   

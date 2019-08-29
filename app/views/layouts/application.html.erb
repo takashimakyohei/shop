@@ -4,9 +4,9 @@
     <title>Shop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -18,12 +18,14 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
-          <%=icon('fas', 'home',class:"icon-home")%>
+          <%=icon('fas', 'home',class:"icon")%>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           
               <li>
-              <%= link_to "商品一覧",products_path,class:"font" %>
+              <%= link_to products_path do %>
+               <%=icon('fas', 'th-list',class:"icon")%>
+               <% end %>
               </li>
               
               
@@ -31,21 +33,24 @@
           
           <% if logged_in? %>
           
-          <li>
+        
+            
+            
+            <li>
               <%= link_to user_home_path do %>
-                <%=image_tag "icons/user-cog.jpeg"%>
+                <%=icon('fas', 'users-cog',class:"icon")%>
               <% end %>
             </li>
           
             <li>
               <%= link_to carts_index_path do %>
-                <%=icon('fas', 'shopping-cart',class:"icon-cart")%>
+                <%=icon('fas', 'shopping-cart',class:"icon")%>
               <% end %>
             </li>
             
             <li>
               <%= link_to logout_path, method: :delete do %>
-                <%=image_tag "icons/logout.png",class:"icon-logout" %>
+                <%=icon('fas', 'sign-out-alt',class:"icon")%>
               <% end %>
             <li>
           <% else %>
