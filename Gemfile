@@ -72,3 +72,4 @@ gem 'font-awesome-rails'
 gem "carrierwave"
 gem 'devise'
 gem 'payjp'
+

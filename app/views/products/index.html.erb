@@ -1,7 +1,7 @@
 <div class="topic-index-wrapper">
   <div class="container">
     <% @products.each do |product| %>
-      <div class="row">
+
         <div class="col-md-3">
           <div class="topic-index-single">
             <h4 class="topic-author">
@@ -34,9 +34,10 @@
             
           </div>
         </div>
-      </div>
+
     <% end %>
 
-       <h2><%= link_to "カートへ",carts_index_path %></h2>
+
   </div>
+         <h2 class="cart_text"><%= link_to "カートへ",carts_index_path %></h2>
 </div>
