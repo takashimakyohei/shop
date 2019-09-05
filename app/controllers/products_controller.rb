@@ -20,7 +20,7 @@ before_action :find_post, only:[:show,:edit,:update,:destroy]
     if @product.save
       redirect_to products_path,success:"商品登録に成功しました"
     else
-      flash.now[:danger]="商品登録に失敗しました"
+      flash.now[:danger]=@product.errors.full_messages.join
       render :new
     end
   end
